@@ -54,11 +54,11 @@ public class StudentManagementSystem {
         System.out.print("Enter student ID: ");
         int id = sc.nextInt();
 
-        System.out.print("Enter student grade: ");
-        double grade = sc.nextDouble();
+        System.out.print("Enter student Cgpa: ");
+        double Cgpa = sc.nextDouble();
         sc.nextLine();
 
-        students[count] = new Student(name, id, grade);
+        students[count] = new Student(name, id, Cgpa);
         count++;
 
         System.out.println("Student added successfully!");
@@ -141,13 +141,13 @@ public class StudentManagementSystem {
                 System.out.print("New ID: ");
                 int newId = sc.nextInt();
 
-                System.out.print("New grade: ");
-                double newGrade = sc.nextDouble();
+                System.out.print("New Cgpa: ");
+                double newCgpa = sc.nextDouble();
                 sc.nextLine();
 
                 students[i].setName(newName);
                 students[i].setId(newId);
-                students[i].setGrade(newGrade);
+                students[i].setCgpa(newCgpa);
 
                 System.out.println("Student updated successfully!");
                 return;
