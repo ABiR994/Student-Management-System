@@ -1,13 +1,13 @@
 # 🧑‍🎓 Student Management System (Java Console App)
 
-A simple **Java-based console application** that manages student records.  
+A simple **Java-based console application** that manages student records.
 This project demonstrates fundamental **OOP concepts** such as:
 
-- Classes & Objects  
-- Constructors  
-- Encapsulation  
-- Getters & Setters  
-- Arrays  
+- Classes & Objects
+- Constructors
+- Encapsulation
+- Getters & Setters
+- Arrays
 - Basic CRUD operations (Create, Read, Update, Search)
 
 This project is perfect for beginners learning Java or building their first portfolio project.
@@ -18,25 +18,25 @@ This project is perfect for beginners learning Java or building their first port
 
 ### ✅ Add Student
 Store a student's:
-- Name  
-- ID  
-- Grade  
+- Name
+- ID
+- Cgpa
 
-### ✅ Display All Students  
+### ✅ Display All Students
 Shows all saved student records in a clean format.
 
-### ✅ Search Student  
+### ✅ Search Student
 Search by:
-- **ID**  
-- **Name**  
+- **ID**
+- **Name**
 
-### ✅ Update Student  
+### ✅ Update Student
 Update any student’s:
-- Name  
-- ID  
-- Grade  
+- Name
+- ID
+- Cgpa
 
-### ✅ Console-Based Menu  
+### ✅ Console-Based Menu
 User-friendly navigation through options.
 
 ---
