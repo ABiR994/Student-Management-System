@@ -14,7 +14,7 @@ public class StudentManagementSystem {
             System.out.println("3. Search Student");
             System.out.println("4. Update Student");
             System.out.println("5. Exit");
-            System.out.print("Enter your choice: ");
+            System.out.print("\nEnter your choice: ");
 
             int choice = sc.nextInt();
             sc.nextLine();
@@ -33,10 +33,10 @@ public class StudentManagementSystem {
                     updateStudent();
                     break;
                 case 5:
-                    System.out.println("Exiting program...");
+                    System.out.println("\nExiting program...");
                     return;
                 default:
-                    System.out.println("Invalid choice. Try again!");
+                    System.out.println("\nInvalid choice. Try again!");
             }
         }
     }
@@ -44,11 +44,11 @@ public class StudentManagementSystem {
 
     public static void addStudent() {
         if (count >= students.length) {
-            System.out.println("Student database is full!");
+            System.out.println("\nStudent database is full!");
             return;
         }
 
-        System.out.print("Enter student name: ");
+        System.out.print("\nEnter student name: ");
         String name = sc.nextLine();
 
         System.out.print("Enter student ID: ");
@@ -61,13 +61,13 @@ public class StudentManagementSystem {
         students[count] = new Student(name, id, Cgpa);
         count++;
 
-        System.out.println("Student added successfully!");
+        System.out.println("\nStudent added successfully!");
     }
 
 
     public static void displayAllStudents() {
         if (count == 0) {
-            System.out.println("No students to display!");
+            System.out.println("\nNo students to display!");
             return;
         }
 
@@ -80,62 +80,66 @@ public class StudentManagementSystem {
 
     public static void searchStudent() {
         if (count == 0) {
-            System.out.println("No students to search!");
+            System.out.println("\nNo students to search!");
             return;
         }
 
-        System.out.println("Search by: ");
+        System.out.println("\nSearch by: ");
         System.out.println("1. ID");
         System.out.println("2. Name");
+        System.out.print("\nEnter your choice: ");
         int choice = sc.nextInt();
         sc.nextLine();
 
         if (choice == 1) {
-            System.out.print("Enter student ID: ");
+            System.out.print("\nEnter student ID: ");
             int id = sc.nextInt();
             sc.nextLine();
 
             for (int i = 0; i < count; i++) {
                 if (students[i].getId() == id) {
-                    System.out.println("Student Found:");
+                    System.out.println("\nStudent Found:");
                     students[i].displayInfo();
                     return;
                 }
             }
 
         } else if (choice == 2) {
-            System.out.print("Enter student name: ");
+            System.out.print("\nEnter student name: ");
             String name = sc.nextLine();
 
             for (int i = 0; i < count; i++) {
                 if (students[i].getName().equalsIgnoreCase(name)) {
-                    System.out.println("Student Found:");
+                    System.out.println("\nStudent Found:");
                     students[i].displayInfo();
                     return;
                 }
             }
+        } else {
+            System.out.println("\nInvalid choice!");
+            return;
         }
 
-        System.out.println("Student not found!");
+        System.out.println("\nStudent not found!");
     }
 
 
     public static void updateStudent() {
         if (count == 0) {
-            System.out.println("No students to update!");
+            System.out.println("\nNo students to update!");
             return;
         }
 
-        System.out.print("Enter ID of student to update: ");
+        System.out.print("\nEnter ID of student to update: ");
         int id = sc.nextInt();
         sc.nextLine();
 
         for (int i = 0; i < count; i++) {
             if (students[i].getId() == id) {
 
-                System.out.println("Student found. Enter new details.");
+                System.out.println("\nStudent found. Enter new details.");
 
-                System.out.print("New name: ");
+                System.out.print("\nNew name: ");
                 String newName = sc.nextLine();
 
                 System.out.print("New ID: ");
@@ -149,11 +153,11 @@ public class StudentManagementSystem {
                 students[i].setId(newId);
                 students[i].setCgpa(newCgpa);
 
-                System.out.println("Student updated successfully!");
+                System.out.println("\nStudent updated successfully!");
                 return;
             }
         }
 
-        System.out.println("Student not found!");
+        System.out.println("\nStudent not found!");
     }
 }
