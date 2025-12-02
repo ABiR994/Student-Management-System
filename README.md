@@ -42,7 +42,7 @@ User-friendly navigation through options.
 ---
 
 ## 📂 Project Structure
-Student.java # Student class (model)
-StudentManagementSystem.java # Main console program
+- `Student.java` — Student class (model)
+- `StudentManagementSystem.java` — Main console program
 
 ---
