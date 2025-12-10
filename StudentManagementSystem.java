@@ -41,6 +41,18 @@ public class StudentManagementSystem {
         }
     }
 
+    public static double cgpaValidation(String message) {
+        while (true) {
+            System.out.print(message);
+            double cgpa = sc.nextDouble();
+            sc.nextLine();
+            if (cgpa >= 0.0 && cgpa <= 4.0) {
+                return cgpa;
+            } else {
+                System.out.println("Invalid Cgpa. Please enter a value between 0.0 and 4.0.");
+            }
+        }
+    }
 
     public static void addStudent() {
         if (count >= students.length) {
@@ -52,11 +64,10 @@ public class StudentManagementSystem {
         String name = sc.nextLine();
 
         System.out.print("Enter student ID: ");
-        int id = sc.nextInt();
+        String id = sc.nextLine();
 
-        System.out.print("Enter student Cgpa: ");
-        double Cgpa = sc.nextDouble();
-        sc.nextLine();
+        String message = "Enter student Cgpa (0.0 - 4.0): ";
+        double Cgpa = cgpaValidation(message);
 
         students[count] = new Student(name, id, Cgpa);
         count++;
@@ -93,11 +104,10 @@ public class StudentManagementSystem {
 
         if (choice == 1) {
             System.out.print("\nEnter student ID: ");
-            int id = sc.nextInt();
-            sc.nextLine();
+            String id = sc.nextLine();
 
             for (int i = 0; i < count; i++) {
-                if (students[i].getId() == id) {
+                if (students[i].getId().equalsIgnoreCase(id)) {
                     System.out.println("\nStudent Found:");
                     students[i].displayInfo();
                     return;
@@ -131,11 +141,10 @@ public class StudentManagementSystem {
         }
 
         System.out.print("\nEnter ID of student to update: ");
-        int id = sc.nextInt();
-        sc.nextLine();
+        String id = sc.nextLine();
 
         for (int i = 0; i < count; i++) {
-            if (students[i].getId() == id) {
+            if (students[i].getId().equalsIgnoreCase(id)) {
 
                 System.out.println("\nStudent found. Enter new details.");
 
@@ -143,11 +152,10 @@ public class StudentManagementSystem {
                 String newName = sc.nextLine();
 
                 System.out.print("New ID: ");
-                int newId = sc.nextInt();
+                String newId = sc.nextLine();
 
-                System.out.print("New Cgpa: ");
-                double newCgpa = sc.nextDouble();
-                sc.nextLine();
+                String message = "New Cgpa: ";
+                double newCgpa = cgpaValidation(message);
 
                 students[i].setName(newName);
                 students[i].setId(newId);
